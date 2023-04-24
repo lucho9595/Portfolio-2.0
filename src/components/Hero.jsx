@@ -42,6 +42,9 @@ justify-content: space-between;
         .sobremí{
             font-size: 24px;
             color: lightgray;
+            .name{
+                color: #fd15c3;
+            }
         }
         .button{
             background-color: #da4ea2;
@@ -71,7 +74,7 @@ justify-content: space-between;
 
             @keyframes animate {
                 to{
-                    transform: translateY(20px);
+                    transform: translateY(15px);
                 }
             }
         }
@@ -92,10 +95,10 @@ const Hero = () => {
                     </div>
                     <div className="wwd">
                         <img src={Line} className="line" />
-                        <p className="letter">What We Do</p>
+                        <p className="letter">Hello</p>
                     </div>
                     <div className="sobremí">
-                        <p>I am an ambitious, collaborative person, eager to grow professionally</p>
+                        <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
                     </div>
                     <button className="button">Learn More</button>
                 </div>

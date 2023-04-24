@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Line from "../../public/img/line.png";
-import Programmer from "../../public/img/Programmer.png";
+import Developer from "../../public/img/Developer.png";
 
 const Section = styled.div`
 height: 100vh;
@@ -18,7 +17,27 @@ justify-content: space-between;
     justify-content: space-between;
     .left{
         flex: 1;
+                position: relative;
+        .img{
+            width: 500px;
+            height: 600px;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            animation: animate 2s infinite ease alternate;
+
+            @keyframes animate {
+                to{
+                    transform: translateY(15px);
+                }
+            }
+        }
     }
+
     .right{
         flex: 1;
         display: flex;
@@ -26,34 +45,11 @@ justify-content: space-between;
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
-        .leyend h1{
-            font-size:74px;
+        .title h3{
+            font-size:100px;
         }
-        .wwd{
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;    
-            gap: 10px;   
-            .line{
-                height: 5px;
-            }
-            .letter{
-                color: #fd15c3;
-            }
-        }
-        .sobremí{
-            font-size: 24px;
-            color: lightgray;
-        }
-        .button{
-            background-color: #da4ea2;
-            color: white;
-            font-weight: 500;
-            width: 100px;
-            border-radius: 10px;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+        .leyend{
+            font-size:33px;
         }
     }
 }
@@ -64,21 +60,19 @@ const Hero = () => {
         <Section>
             <div className="container">
                 <div className="left">
+                    <img src={Developer} className="img" />
                 </div>
                 <div className="right">
+                    <div className="title">
+                        <h3>
+                            Who am I?
+                        </h3>
+                    </div>
                     <div className="leyend">
-                        <h1>
-                            Think. Make. Solve.
-                        </h1>
+                        <p>Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
+                            I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
+                            and applications. I love learning and putting into practice the new knowledge that I am learning over time.</p>
                     </div>
-                    <div className="wwd">
-                        <img src={Line} className="line" />
-                        <p className="letter">What We Do</p>
-                    </div>
-                    <div className="sobremí">
-                        <p>I am an ambitious, collaborative person, eager to grow professionally</p>
-                    </div>
-                    <button className="button">Learn More</button>
                 </div>
             </div>
         </Section>
