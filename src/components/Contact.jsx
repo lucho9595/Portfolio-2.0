@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import styled from "styled-components";
 import Map from "./Map";
 
@@ -56,20 +57,38 @@ scroll-snap-align: center;
 `
 
 const Contact = () => {
+    const ref = useRef()
+
+    const [success, setSuccess] = useState(null)
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        emailjs.sendForm('service_wk7208k', 'template_ztlccjk', ref.current, 'Cv-Y0aYLM2UTkCfZz')
+            .then((result) => {
+                console.log(result.text);
+                setSuccess(true)
+            }, (error) => {
+                console.log(error.text);
+                setSuccess(false)
+            });
+    }
+
     return (
         <Section4>
             <div className="container">
                 <div className="left">
-                    <form className="form">
+                    <form ref={ref} className="form" onSubmit={(e) => handleSubmit(e)}>
                         <div className="title">
                             <h1 className="subtitle">Contact Us</h1>
                         </div>
-                        <input className="input" placeholder="Name"></input>
-                        <input className="input" placeholder="Email"></input>
-                        <input className="input" placeholder="Phone Number"></input>
-                        <textarea className="textarea" placeholder="Write your message" rows={10}></textarea>
-                        <button className="btn">Send</button>
-
+                        <input className="input" placeholder="Name" name='name' type="text"></input>
+                        <input className="input" placeholder="Email" name='email' type="email"></input>
+                        <input className="input" placeholder="Phone Number" name='phone_number' type="email"></input>
+                        <textarea className="textarea" placeholder="Write your message" rows={10} name='message'></textarea>
+                        <button className="btn" type="submit">Send</button>
+                        {success &&
+                            "Your message has been sent. We'll get back to you soon :)"
+                        }
                     </form>
                 </div>
                 <div className="right">

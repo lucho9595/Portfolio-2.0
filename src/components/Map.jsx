@@ -31,7 +31,7 @@ const Map = () => {
                 }
             </Geographies>
             <Annotation
-                subject={[2.3522, 48.8566]}
+                subject={[-58, -36]}
                 dx={-90}
                 dy={-30}
                 connectorProps={{
@@ -40,9 +40,8 @@ const Map = () => {
                     strokeLinecap: "round"
                 }}
             >
-                <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#ffffff">
-                    {"Paris"}
-                </text>
+                <text x="-8" textAnchor="end" alignmentBaseline="end" fill="#ffffff">
+                    {"Buenos Aires"}                </text>
             </Annotation>
         </ComposableMap>
     );
