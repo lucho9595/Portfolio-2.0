@@ -1,6 +1,6 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, RenderTexture } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, RenderTexture, Text } from '@react-three/drei';
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -17,10 +17,17 @@ export default function Test() {
                 <ambientLight intensity={1} />
                 <directionalLight position={[1, 3, 5]} />
                 <mesh>
-                    <boxGeometry args={[1, 1, 1]} />
+                    <boxGeometry args={[2, 2, 2]} />
                     <meshStandardMaterial>
-                        <RenderTexture>
-                            <color attach="background" args={["violet"]} />
+                        <RenderTexture attach="map">
+                            <PerspectiveCamera
+                                makeDefault
+                                position={[0, 0, 2]}
+                            />
+                            <color attach="background" args={["pink"]} />
+                            <Text>
+                                hello
+                            </Text>
                         </RenderTexture>
                     </meshStandardMaterial>
                 </mesh>
