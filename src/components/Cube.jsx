@@ -22,7 +22,7 @@ export default function Cube() {
         camera.position.z = 6;
         camera.position.x = 6;
 
-        const renderer = new THREE.WebGLRenderer();
+        const renderer = new THREE.WebGLRenderer({alpha: true});
         renderer.setSize(width, height);
         currentRef.appendChild(renderer.domElement);
 
