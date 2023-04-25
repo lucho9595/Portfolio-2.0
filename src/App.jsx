@@ -3,6 +3,8 @@ import Contact from "./components/Contact"
 import Hero from "./components/Hero"
 import Who from "./components/Who"
 import Works from "./components/Works"
+import Test from "./components/Test"
+import Skills from "./components/Skills"
 
 const Container = styled.div`
 height: 100vh;
@@ -24,7 +26,9 @@ function App() {
       <Hero />
       <Who />
       <Works />
+      <Skills />
       <Contact />
+      <Test />
     </Container>
   )
 }
