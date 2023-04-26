@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import Line from "../../public/img/line.png";
 import Programmer from "../../public/img/Programmer.png";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
 height: 100vh;
@@ -70,13 +72,13 @@ justify-content: space-between;
             right: 0;
             left: 0;
             margin: auto;
-            animation: animate 2s infinite ease alternate;
+            /* animation: animate 2s infinite ease alternate;
 
             @keyframes animate {
                 to{
                     transform: translateY(15px);
                 }
-            }
+            } */
         }
     }
 }
@@ -103,6 +105,19 @@ const Hero = () => {
                     <button className="button">Learn More</button>
                 </div>
                 <div className="right">
+                    <Canvas>
+                        <OrbitControls enableZoom={false} />
+                        <ambientLight intensity={1} />
+                        <directionalLight position={[3, 2, 1]} />
+                        <Sphere args={[1, 100, 200]} scale={1.5}>
+                            <MeshDistortMaterial
+                                color="#3b264b"
+                                attach="material"
+                                distort={0.5}
+                                speed={2}
+                            />
+                        </Sphere>
+                    </Canvas>
                     <img src={Programmer} className="img" />
                 </div>
             </div>
