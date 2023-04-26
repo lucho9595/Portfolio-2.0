@@ -32,6 +32,9 @@ justify-content: center;
         flex-direction: column;
          gap: 20px;
         flex-wrap: wrap;
+        .title{
+            font-size: 65px;
+        }
         .links{
             display: flex;
             flex-direction: column;
@@ -54,11 +57,13 @@ justify-content: center;
 `
 
 const Works = () => {
+const [work,]
+
     return (
         <Section3>
             <div className="container">
                 <div className="left">
-                    <h1>My works</h1>
+                    <h1 className="title">My works</h1>
                     <ul className="links">
                         {Data.map((item) => (
                             <li key={item} className="link" text={item}>{item}</li>
