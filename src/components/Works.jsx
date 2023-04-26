@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Pokedata from "./Pokedata";
+import Videogame from "./Videogame";
+import Ecommerce from "./Ecommerce";
 
 const Data = [
     "Pokedata",
@@ -57,7 +60,7 @@ justify-content: center;
 `
 
 const Works = () => {
-const [work,]
+    const [work, setWork] = useState("Pokedata")
 
     return (
         <Section3>
@@ -66,12 +69,16 @@ const [work,]
                     <h1 className="title">My works</h1>
                     <ul className="links">
                         {Data.map((item) => (
-                            <li key={item} className="link" text={item}>{item}</li>
+                            <li key={item} className="link" text={item} onClick={() => setWork(item)}>{item}</li>
                         ))}
                     </ul>
                 </div>
                 <div className="right">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nulla sit nostrum atque maiores provident voluptatum, repellendus aspernatur fuga, voluptatibus soluta quo excepturi ullam eum hic. Voluptate odio veniam iste!
+                    {work === "Pokedata" ?
+                        (<Pokedata />)
+                        : work === "Videogame" ?
+                            (<Videogame />)
+                            : (<Ecommerce />)}
                 </div>
             </div>
         </Section3>
