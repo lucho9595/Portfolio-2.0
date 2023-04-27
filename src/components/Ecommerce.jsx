@@ -18,6 +18,12 @@ const Container = styled.div`
         height: 100%;
         transition: all 400ms ease-out;
         will-change: transform;
+
+    @media only screen and (max-width: 768px) {
+        width: 350px;
+        height: 180px;
+        margin-left: 20px;
+    }
     }
     .contenedor figure .capa{
         position: absolute;
@@ -33,13 +39,31 @@ const Container = styled.div`
     .contenedor figure:hover > .capa {
         opacity: 1;
         visibility: visible;
+
+            @media only screen and (max-width: 768px) {
+        width: 350px;
+        height: 180px;
+        margin-left: 20px;
+    }
+
     }
     .contenedor figure:hover > .capa h3{
         margin-top: 70px;
         margin-bottom: 15px;
+       
+        @media only screen and (max-width: 768px) {
+            font-size: 19px;
+            font-weight: 800;
+            margin-top: 25px;
+            margin-bottom: 9px;
+        }
     }
     .contenedor figure:hover > img{
         transform: scale(1.3);
+
+        @media only screen and (max-width: 768px) {
+            transform: scale(1);
+        }
     }
     .contenedor figure .capa h3{
         color: #050505;
@@ -47,7 +71,7 @@ const Container = styled.div`
         font-weight: 800;
         margin-bottom: 120px;
         transition: all 400ms ease-out;
-         margin-top: 30px;
+        margin-top: 30px;
     }
     .contenedor figure .capa p{
         color: #fff;
@@ -57,6 +81,11 @@ const Container = styled.div`
         width: 100%;
         max-width: 220px;
         margin: auto;
+
+            @media only screen and (max-width: 768px) {
+            font-size: 13px;
+            font-weight: 400;
+        }
     }
     .contenedor figure .capa .click{
         color: #1323ff;
@@ -64,6 +93,11 @@ const Container = styled.div`
         margin-top: 15px;
         font-size: 25px;
         font-weight: 900;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 16px;
+            font-weight: 900;
+        }
     }
     `
 

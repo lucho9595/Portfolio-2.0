@@ -30,7 +30,7 @@ const items = [
     },
 ];
 
-function Skills(args) {
+export default function Skills(args){
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -104,14 +104,28 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
+   @media only screen and (max-width: 768px) {
+        margin-bottom: 250px;
+    }
+
 `
+
 const Image = styled.img`
    height: 500px; 
    width: 1200px;
+   
+   @media only screen and (max-width: 768px) {
+        height: 350px;
+        width: 100%;
+    }
 `
 const Title = styled.h1`
 font-size: 50px;
 margin-bottom: 35px;
-`
 
-export default Skills;
+@media only screen and (max-width: 768px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+`
