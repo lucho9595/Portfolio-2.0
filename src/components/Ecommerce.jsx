@@ -59,10 +59,11 @@ const Container = styled.div`
         margin: auto;
     }
     .contenedor figure .capa .click{
+        color: #1323ff;
+        text-decoration: none;
         margin-top: 15px;
         font-size: 25px;
         font-weight: 900;
-
     }
     `
 
@@ -71,7 +72,7 @@ export default function Ecommerce() {
     return (
         <Container>
             <div className="contenedor">
-                <a href="https://www.google.com" target="_blank">
+                <a href="https://ecommerce-pg-nine.vercel.app/" target="_blank">
                     <figure>
                         <img src={Ticket} />
                         <div className="capa">

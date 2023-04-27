@@ -60,10 +60,11 @@ const Container = styled.div`
     }
     
     .contenedor figure .capa .click{
+        color: #1323ff;
+        text-decoration: none;
         margin-top: 15px;
         font-size: 25px;
         font-weight: 900;
-
     }
     `
 
@@ -72,7 +73,7 @@ export default function Videogame() {
     return (
         <Container>
             <div class="contenedor">
-                <a href="https://www.google.com" target="_blank">
+                <a href="https://proyect-videogame-lucho9595.vercel.app/" target="_blank">
                     <figure>
                         <img src={Video} />
                         <div class="capa">
