@@ -77,13 +77,10 @@ export default function Pokedata() {
                         <img src={Poke} />
                         <div class="capa">
                             <h3>POKEDATA</h3>
-                            <p>Lorem ipsum
-                                dolor sit amet,
-                                consectetur adipisicing elit. Maiores, vero!
-                                asdasdasdasdasdasdas
-                                sadasdasdsadas
-                                dasdasdasdasdasdasdsa
-                                sadasdasdsd
+                            <p>
+                                Diseñar y desarrollar una app de videojuegos que
+                                incluía:
+                                búsqueda , filtrados, creación y ordenamientos
                             </p>
                             <div className="click">
                                 <span>Click Here</span><HiCursorClick />

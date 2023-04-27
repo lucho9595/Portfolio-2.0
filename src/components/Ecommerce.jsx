@@ -76,16 +76,12 @@ export default function Ecommerce() {
                         <img src={Ticket} />
                         <div className="capa">
                             <h3>ECOMMERCE</h3>
-                            <p>Lorem ipsum
-                                dolor sit amet,
-                                consectetur adipisicing elit. Maiores, vero!
-                                asdasdasdasdasdasdas
-                                sadasdasdsadas
-                                dasdasdasdasdasdasdsa
-                                sadasdasdsd
+                            <p>
+                                E-commerce de tickets para eventos , incluye vista
+                                de usuario y de admin , con su respectivo dashboard
                             </p>
                             <div className="click">
-                                <span>Click Here</span><HiCursorClick/>
+                                <span>Click Here</span><HiCursorClick />
                             </div>
                         </div>
                     </figure>
