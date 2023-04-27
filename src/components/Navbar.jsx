@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Logo4 from "../../public/img/Logo4.png";
 import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
+import Spanish from "../../public/es.svg";
+import English from "../../public/us.svg";
 
 const Section2 = styled.div`
 display: flex;
@@ -65,6 +67,22 @@ justify-content: center;
             background-color: #333;
             color: white;
             }
+        .flags{
+            width: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .flags_item{
+                width: 30px;  
+            }
+
+            .flags_item img{
+                display: block;
+                cursor: pointer;
+            }
+        }
+
     }
 }
 `
@@ -86,6 +104,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="icons">
+                    <div className="flags" id="flags">
+                        <div className="flags_item" data-language="es">
+                            <img src={Spanish} alt="" />
+                        </div>
+                        <div className="flags_item" data-language="en">
+                            <img src={English} alt="" />
+                        </div>
+                    </div>
                     <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
                 </div>
             </div>

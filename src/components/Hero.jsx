@@ -6,13 +6,6 @@ import Programmer from "../../public/img/Programmer.png";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
-const Barra = styled.div`
-  position: absolute;
-   top: 1em;
-   right: 0;
-   bottom: 1em;
-   left: 0;
-`
 
 const Section = styled.div`
   height: 100vh;
@@ -128,9 +121,7 @@ const Img = styled.img`
 export default function Hero() {
   return (
     <Section>
-      <Barra >
-        <Navbar />
-      </Barra>
+      <Navbar />
       <Container>
         <Left>
           <Title>

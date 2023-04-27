@@ -31,10 +31,10 @@ function App() {
       <Works />
       <Skills />
       <Contact />
-      <Routes>
+      {/* <Routes>
         <Route path="/biography" element={<Biography />} />
         <Route path="/*" element={<PageNotFound />} />
-      </Routes>
+      </Routes> */}
     </Container>
   )
 }
