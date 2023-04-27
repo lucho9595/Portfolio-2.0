@@ -1,81 +1,117 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption,
+} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
 
+const items = [
+    {
+        src: 'https://picsum.photos/id/123/1200/400',
+        altText: 'Slide 1',
+        caption: 'Slide 1',
+        key: 1,
+    },
+    {
+        src: 'https://picsum.photos/id/456/1200/400',
+        altText: 'Slide 2',
+        caption: 'Slide 2',
+        key: 2,
+    },
+    {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 3,
+    },
+];
 
-const Section = styled.div`
+function Skills(args) {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const next = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const previous = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+    };
+
+    const slides = items.map((item) => {
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item.src}
+            >
+                <Image src={item.src} alt={item.altText} />
+                <CarouselCaption
+                    captionText={item.caption}
+                    captionHeader={item.caption}
+                />
+            </CarouselItem>
+        );
+    });
+
+    return (
+        <Container>
+            <Title>My Skills</Title>
+            <Carousel
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+                {...args}
+            >
+                <CarouselIndicators
+                    items={items}
+                    activeIndex={activeIndex}
+                    onClickHandler={goToIndex}
+                />
+                {slides}
+                <CarouselControl
+                    direction="prev"
+                    directionText="Previous"
+                    onClickHandler={previous}
+                />
+                <CarouselControl
+                    direction="next"
+                    directionText="Next"
+                    onClickHandler={next}
+                />
+            </Carousel>
+        </Container>
+    );
+}
+
+const Container = styled.div`
 height: 100vh;
 scroll-snap-align: center;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
-.container{
-    height: 100vh;
-    scroll-snap-align: center;
-    width: 1400px;
-    display: flex;
-    justify-content: space-between;
-    .left{
-        flex: 1;
-                position: relative;
-        .img{
-            width: 500px;
-            height: 600px;
-            object-fit: contain;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            animation: animate 2s infinite ease alternate;
-
-            @keyframes animate {
-                to{
-                    transform: translateY(15px);
-                }
-            }
-        }
-    }
-
-    .right{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        .title h3{
-            font-size:100px;
-        }
-        .leyend{
-            font-size:33px;
-        }
-    }
-}
+justify-content: center;
+`
+const Image = styled.img`
+   height: 500px; 
+   width: 1200px;
+`
+const Title = styled.h1`
+font-size: 50px;
+margin-bottom: 35px;
 `
 
-const Skills = () => {
-    return (
-        <Section>
-            <div className="container">
-                <div className="left">
-                </div>
-                <div className="right">
-                    <div className="title">
-                        <h3>
-                            Who am I?
-                        </h3>
-                    </div>
-                    <div className="leyend">
-                        <p>Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
-                            I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
-                            and applications. I love learning and putting into practice the new knowledge that I am learning over time.</p>
-                    </div>
-                </div>
-            </div>
-        </Section>
-    )
-}
-
-export default Skills
+export default Skills;
