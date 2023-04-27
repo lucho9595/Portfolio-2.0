@@ -16,13 +16,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 50px;
-
-@media only screen and (max-width: 768px) {
-    height: 20%;
-    width: 20%;
-    margin-top: 90px;
-  }
-
 `;
 
 const Left = styled.div`

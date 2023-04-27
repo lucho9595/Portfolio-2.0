@@ -79,6 +79,14 @@ justify-content: center;
                 display: block;
                 cursor: pointer;
             }
+
+            @media only screen and (max-width: 768px) {
+                width: 50px;
+                #english{
+                    margin-left:5px;
+                    width: 23px;
+                }
+            }
         }
     }
 }
@@ -105,10 +113,10 @@ const Navbar = () => {
                 <div className="icons">
                     <div className="flags" id="flags">
                         <div className="flags_item" data-language="es">
-                            <img src={Spanish} alt="" />
+                            <img src={Spanish} id="spanish" />
                         </div>
                         <div className="flags_item" data-language="en">
-                            <img src={English} alt="" />
+                            <img src={English} id="english" />
                         </div>
                     </div>
                     <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
