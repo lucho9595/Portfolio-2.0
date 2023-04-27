@@ -4,10 +4,10 @@ import {
     Geographies,
     Geography,
     Annotation,
-    ZoomableGroup
 } from "react-simple-maps";
 
-const Map = () => {
+export default function Maps(){
+
     return (
         <ComposableMap
             projection="geoAzimuthalEqualArea"
@@ -46,5 +46,3 @@ const Map = () => {
         </ComposableMap>
     );
 };
-
-export default Map;
