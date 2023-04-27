@@ -38,6 +38,7 @@ flex-flow: column;
 gap: 30px;
 align-items: center;
 @media only screen and (max-width: 768px) {
+    gap: 20px;
     padding: 20px;
     justify-content: center;
   }
@@ -48,6 +49,12 @@ const Title = styled.h1`
 font-size: 100px;
 color: white;
 margin-right: 110px;
+margin-top: 50px;
+@media only screen and (max-width: 768px) {
+    font-size: 50px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
 `;
 
 

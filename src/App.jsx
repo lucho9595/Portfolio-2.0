@@ -29,8 +29,8 @@ function App() {
       <Hero />
       <Who />
       <Works />
-      {/*<Skills />
-      <Contact /> */}
+      <Skills />
+      <Contact />
       <Routes>
         <Route path="/biography" element={<Biography />} />
         <Route path="/*" element={<PageNotFound />} />
