@@ -4,7 +4,6 @@ import Hero from "./components/Hero"
 import Who from "./components/Who"
 import Works from "./components/Works"
 import Skills from "./components/Skills"
-import Cube from "./components/Cube"
 
 const Container = styled.div`
 height: 100vh;

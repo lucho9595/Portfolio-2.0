@@ -28,13 +28,17 @@ justify-content: center;
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
+        position: relative;
     }
     .left{
-        flex: 1;
+        flex: 1 1 0%;
         display: flex;
-        flex-direction: column;
-         gap: 20px;
+        flex-flow: column;
+        gap: 20px;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        }        
         .title{
             font-size: 65px;
         }
@@ -43,6 +47,8 @@ justify-content: center;
             flex-direction: column;
             gap: 20px;
             list-style: none;
+            flex-wrap: wrap;
+            margin: -28px;
             .link{
                 font-size: 100px;
                 font-weight: bold;
@@ -56,7 +62,6 @@ justify-content: center;
             }
         }
     }
-}
 `
 
 const Works = () => {

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Developer from "../../public/img/Developer.png";
 import Cube from "./Cube";
 
 const Section = styled.div`
@@ -61,7 +60,6 @@ const Hero = () => {
         <Section>
             <div className="container">
                 <div className="left">
-                    {/* <img src={Developer} className="img" /> */}
                     <Cube />
                 </div>
                 <div className="right">
