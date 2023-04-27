@@ -32,8 +32,7 @@ const Left = styled.div`
   justify-content: flex-end;
   @media only screen and (max-width: 768px) {
     justify-content: center;
-    width: 850px;
-    heigth: 150px;
+
   }
 `;
 

@@ -6,6 +6,14 @@ import Programmer from "../../public/img/Programmer.png";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
+const Barra = styled.div`
+  position: absolute;
+   top: 1em;
+   right: 0;
+   bottom: 1em;
+   left: 0;
+`
+
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -118,40 +126,42 @@ const Img = styled.img`
 
 
 export default function Hero() {
-    return (
-        <Section>
-            <Navbar />
-            <Container>
-                <Left>
-                    <Title>
-                        Think. Make. Solve.
-                    </Title>
-                    <WhatWeDo>
-                        <Line src={Linea} />
-                        <Subtitle>Hello</Subtitle>
-                    </WhatWeDo>
-                    <Desc>
-                        <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
-                    </Desc>
-                    <Button>Learn More</Button>
-                </Left>
-                <Right>
-                    <Canvas>
-                        <OrbitControls enableZoom={false} />
-                        <ambientLight intensity={1} />
-                        <directionalLight position={[3, 2, 1]} />
-                        <Sphere args={[1, 100, 200]} scale={2.5}>
-                            <MeshDistortMaterial
-                                color="#3b264b"
-                                attach="material"
-                                distort={0.5}
-                                speed={2}
-                            />
-                        </Sphere>
-                    </Canvas>
-                    <Img src={Programmer} />
-                </Right>
-            </Container>
-        </Section>
-    )
+  return (
+    <Section>
+      <Barra >
+        <Navbar />
+      </Barra>
+      <Container>
+        <Left>
+          <Title>
+            Think. Make. Solve.
+          </Title>
+          <WhatWeDo>
+            <Line src={Linea} />
+            <Subtitle>Hello</Subtitle>
+          </WhatWeDo>
+          <Desc>
+            <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
+          </Desc>
+          <Button>Learn More</Button>
+        </Left>
+        <Right>
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Sphere args={[1, 100, 200]} scale={2.5}>
+              <MeshDistortMaterial
+                color="#3b264b"
+                attach="material"
+                distort={0.5}
+                speed={2}
+              />
+            </Sphere>
+          </Canvas>
+          <Img src={Programmer} />
+        </Right>
+      </Container>
+    </Section>
+  )
 };
