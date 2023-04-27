@@ -1,55 +1,96 @@
 import React from "react";
 import Poke from "../../public/img/Sin título 3.png";
 import styled from "styled-components";
-import { ImSphere } from "react-icons/im";
+import { HiCursorClick } from "react-icons/hi";
 
 const Container = styled.div`
-.proyecto{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .img{
-        border-radius: 20px;
-        width: 800px;
-        height: 400px;
+    .contenedor figure{
+       position:relative;
+        height: 350px;
+        cursor: pointer;
+        width: 650px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
         position: absolute;
         top: 0;
-        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(225, 106, 248, 0.7);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
     }
-}
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+        transform: scale(1.3);
+    }
+    .contenedor figure .capa h3{
+        color: #050505;
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 220px;
+        margin: auto;
+    }
+    
+    .contenedor figure .capa .click{
+        margin-top: 15px;
+        font-size: 25px;
+        font-weight: 900;
 
-.btn{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-        .buttonDownload{
-            border-radius: 4px;
-            background-color: #df3df5;
-            border: none;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
-            width: 100px;
-            transition: all 0.5s;
-            margin: 5px;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            }
-}
-`
+    }
+    `
 
 export default function Pokedata() {
+
     return (
         <Container>
-            <div >
-                <div className="proyecto">
-                    <img src={Poke} alt="" className="img" />
-                </div>
-                <div className="btn">
-                    <a href="https://google.com" target="_blank" className="buttonDownload">See page <ImSphere /></a>
-                </div>
+            <div class="contenedor">
+                <a href="https://www.google.com" target="_blank">
+                    <figure>
+                        <img src={Poke} />
+                        <div class="capa">
+                            <h3>POKEDATA</h3>
+                            <p>Lorem ipsum
+                                dolor sit amet,
+                                consectetur adipisicing elit. Maiores, vero!
+                                asdasdasdasdasdasdas
+                                sadasdasdsadas
+                                dasdasdasdasdasdasdsa
+                                sadasdasdsd
+                            </p>
+                            <div className="click">
+                                <span>Click Here</span><HiCursorClick />
+                            </div>
+                        </div>
+                    </figure>
+                </a>
             </div>
         </Container>
     )

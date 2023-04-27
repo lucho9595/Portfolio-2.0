@@ -1,7 +1,7 @@
 import React from "react";
 import Video from "../../public/img/Sin título 2.png";
 import styled from "styled-components";
-import { ImSphere } from "react-icons/im";
+import { HiCursorClick } from "react-icons/hi";
 
 const Container = styled.div`
     .contenedor figure{
@@ -24,7 +24,7 @@ const Container = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,103,123,0.7);
+        background: rgba(225, 106, 248, 0.7);
         transition: all 400ms ease-out;
         opacity: 0;
         visibility: hidden;
@@ -42,8 +42,9 @@ const Container = styled.div`
         transform: scale(1.3);
     }
     .contenedor figure .capa h3{
-        color: #fff;
-        font-weight: 400;
+        color: #050505;
+        font-size: 30px;
+        font-weight: 800;
         margin-bottom: 120px;
         transition: all 400ms ease-out;
          margin-top: 30px;
@@ -51,11 +52,20 @@ const Container = styled.div`
     .contenedor figure .capa p{
         color: #fff;
         font-size: 15px;
+        font-weight: 400;
         line-height: 1.5;
         width: 100%;
         max-width: 220px;
         margin: auto;
-    }`
+    }
+    
+    .contenedor figure .capa .click{
+        margin-top: 15px;
+        font-size: 25px;
+        font-weight: 900;
+
+    }
+    `
 
 export default function Videogame() {
 
@@ -65,10 +75,20 @@ export default function Videogame() {
                 <a href="https://www.google.com" target="_blank">
                     <figure>
                         <img src={Video} />
-                            <div class="capa">
-                                <h3>POKEDATA</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, vero!</p>
+                        <div class="capa">
+                            <h3>VIDEOGAME</h3>
+                            <p>Lorem ipsum
+                                dolor sit amet,
+                                consectetur adipisicing elit. Maiores, vero!
+                                asdasdasdasdasdasdas
+                                sadasdasdsadas
+                                dasdasdasdasdasdasdsa
+                                sadasdasdsd
+                            </p>
+                            <div className="click">
+                                <span>Click Here</span><HiCursorClick />
                             </div>
+                        </div>
                     </figure>
                 </a>
             </div>
