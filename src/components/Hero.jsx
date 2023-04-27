@@ -1,148 +1,141 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import Line from "../../public/img/line.png";
+import Linea from "../../public/img/line.png";
 import Programmer from "../../public/img/Programmer.png";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
-height: 100vh;
-scroll-snap-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-
-@media only screen and (max-width: 768px){
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media only screen and (max-width: 768px) {
     height: 200vh;
-}
+  }
+`;
 
-.container{
-    height: 100vh;
-    scroll-snap-align: center;
-    width: 1400px;
-    display: flex;
-    justify-content: space-between;
+const Container = styled.div`
+  height: 100%;
+  scroll-snap-align: center;
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
-    @media only screen and (max-width: 768px){
-        width: 100%;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
+const Left = styled.div`
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+  }
+`;
+
+
+const Title = styled.h1`
+  font-size: 74px;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const WhatWeDo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const Line = styled.img`
+  height: 5px;
+`;
+
+const Subtitle = styled.h2`
+  color: #da4ea2;
+`;
+
+const Desc = styled.p`
+  font-size: 24px;
+  color: lightgray;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
+`;
+const Button = styled.button`
+  background-color: #da4ea2;
+  color: white;
+  font-weight: 500;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+const Right = styled.div`
+  flex: 3;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
+`;
+
+const Img = styled.img`
+  width: 800px;
+  height: 600px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: animate 2s infinite ease alternate;
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
     }
+  }
+`;
 
-    .left{
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
 
-        @media only screen and (max-width: 768px){
-            flex: 1;
-        }
-
-        .leyend h1{
-            font-size:74px;
-
-            @media only screen and (max-width: 768px){
-                text-align: center;
-            }
-
-        }
-        .wwd{
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;    
-            gap: 10px;   
-            .line{
-                height: 5px;
-            }
-            .letter{
-                color: #fd15c3;
-            }
-
-            @media only screen and (max-width: 768px){
-                justify-content: center;
-            }
-        }
-        .sobremí{
-            font-size: 24px;
-            color: lightgray;
-            .name{
-                color: #fd15c3;
-            }
-
-            @media only screen and (max-width: 768px){
-                padding: 20px;
-                text-align: center;
-            }
-        }
-        .button{
-            background-color: #da4ea2;
-            color: white;
-            font-weight: 500;
-            width: 150px;
-            border-radius: 10px;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-    }
-    .right{
-        flex: 3;
-        position: relative;
-
-        @media only screen and (max-width: 768px){
-            flex: 1;
-            align-content: center;
-        }
-
-        .img{
-            width: 800px;
-            height: 600px;
-            object-fit: contain;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            /* animation: animate 2s infinite ease alternate;
-
-            @keyframes animate {
-                to{
-                    transform: translateY(15px);
-                }
-            } */
-        }
-    }
-}
-`
-
-const Hero = () => {
+export default function Hero() {
     return (
         <Section>
             <Navbar />
-            <div className="container">
-                <div className="left">
-                    <div className="leyend">
-                        <h1>
-                            Think. Make. Solve.
-                        </h1>
-                    </div>
-                    <div className="wwd">
-                        <img src={Line} className="line" />
-                        <p className="letter">Hello</p>
-                    </div>
-                    <div className="sobremí">
+            <Container>
+                <Left>
+                    <Title>
+                        Think. Make. Solve.
+                    </Title>
+                    <WhatWeDo>
+                        <Line src={Linea} />
+                        <Subtitle>Hello</Subtitle>
+                    </WhatWeDo>
+                    <Desc>
                         <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
-                        <button className="button">Learn More</button>
-                    </div>
-                </div>
-                <div className="right">
+                    </Desc>
+                    <Button>Learn More</Button>
+                </Left>
+                <Right>
                     <Canvas>
                         <OrbitControls enableZoom={false} />
                         <ambientLight intensity={1} />
@@ -156,11 +149,9 @@ const Hero = () => {
                             />
                         </Sphere>
                     </Canvas>
-                    <img src={Programmer} className="img" />
-                </div>
-            </div>
+                    <Img src={Programmer} />
+                </Right>
+            </Container>
         </Section>
     )
-}
-
-export default Hero
+};
