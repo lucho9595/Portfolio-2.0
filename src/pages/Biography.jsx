@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Biography() {
+function Biography() {
     return (
         <div>
-            biography
+            <p>
+                kasjdhaskjdhsakjdhaksdhs
+            </p>
         </div>
     )
-}
+};
+
+export default Biography;

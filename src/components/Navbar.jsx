@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo4 from "../../public/img/Logo4.png";
 import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
@@ -93,7 +94,9 @@ const Navbar = () => {
                     </div>
                     <ul className="link">
                         <li>Home</li>
-                        <li>Biography</li>
+                        <Link to="/biography">
+                            <li>Biography</li>
+                        </Link>
                         <li>Work</li>
                         <li>Skills</li>
                         <li>Contact</li>
