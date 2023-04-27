@@ -4,59 +4,86 @@ import styled from "styled-components";
 import Map from "./Map";
 
 const Section4 = styled.div`
-height: 100vh;
-scroll-snap-align: center;
-.container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    .left{
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;        
-    .form{
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            .title{
-                .subtitle{
-                    font-weight: 200;
-                }
-            }
-            .input{
-                padding: 20px;
-                background-color: lightgray;
-                border: none;
-                border-radius: 5px;
-            }
-            .textarea{
-                padding: 20px;
-                background-color: lightgray;
-                border: none;
-                border-radius: 5px;
-            }
-            .btn{
-                background-color: #da4ea2;
-                color: white;
-                border: none;
-                font-weight: bold;
-                cursor: pointer;
-                border-radius: 5px;
-                padding: 20px;
-            }
-        } 
-    }
-    .right{
-        flex: 1;
-    }
-}
-`
+  height: 100vh;
+  scroll-snap-align: center;
 
-const Contact = () => {
+
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+
+@media only screen and (max-width: 768px) {
+    height: 20%;
+    width: 20%;
+    margin-top: 90px;
+  }
+
+`;
+
+const Left = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    width: 850px;
+    heigth: 150px;
+  }
+`;
+
+const Form = styled.form`
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  }
+`;
+
+
+const Title = styled.h1`
+  font-weight: 200;
+`;
+const Input = styled.input`
+  padding: 20px;
+  background-color: #e8e6e6;
+  border: none;
+  border-radius: 5px;
+`;
+
+const TextArea = styled.textarea`
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e8e6e6;
+`;
+
+const Button = styled.button`
+  background-color: #da4ea2;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 20px;
+`;
+
+const Right = styled.div`
+  flex: 1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export default function Contact() {
     const ref = useRef()
 
     const [success, setSuccess] = useState(null)
@@ -75,28 +102,26 @@ const Contact = () => {
 
     return (
         <Section4>
-            <div className="container">
-                <div className="left">
-                    <form ref={ref} className="form" onSubmit={(e) => handleSubmit(e)}>
-                        <div className="title">
-                            <h1 className="subtitle">Contact Us</h1>
-                        </div>
-                        <input className="input" placeholder="Name" name='name' type="text"></input>
-                        <input className="input" placeholder="Email" name='email' type="email"></input>
-                        <input className="input" placeholder="Phone Number" name='phone_number' type="email"></input>
-                        <textarea className="textarea" placeholder="Write your message" rows={10} name='message'></textarea>
-                        <button className="btn" type="submit">Send</button>
+            <Container>
+                <Left>
+                    <Form ref={ref} onSubmit={(e) => handleSubmit(e)}>
+                        <Title>
+                            Contact Us
+                        </Title>
+                        <Input placeholder="Name" name='name' type="text"></Input>
+                        <Input placeholder="Email" name='email' type="email"></Input>
+                        <Input placeholder="Phone Number" name='phone_number' type="email"></Input>
+                        <TextArea placeholder="Write your message" rows={10} name='message'></TextArea>
+                        <Button type="submit">Send</Button>
                         {success &&
                             "Your message has been sent. We'll get back to you soon :)"
                         }
-                    </form>
-                </div>
-                <div className="right">
+                    </Form>
+                </Left>
+                <Right>
                     <Map />
-                </div>
-            </div>
+                </Right>
+            </Container>
         </Section4>
     )
-}
-
-export default Contact
+};

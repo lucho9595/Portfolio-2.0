@@ -104,6 +104,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
+   @media only screen and (max-width: 768px) {
+        margin-bottom: 250px;
+    }
+
 `
 
 const Image = styled.img`
