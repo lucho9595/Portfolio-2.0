@@ -72,11 +72,11 @@ export default function Pokedata() {
 
     return (
         <Container>
-            <div class="contenedor">
+            <div className="contenedor">
                 <a href="https://proyect-pokemon.vercel.app/" target="_blank">
                     <figure>
                         <img src={Poke} />
-                        <div class="capa">
+                        <div className="capa">
                             <h3>POKEDATA</h3>
                             <p>
                                 Diseñar y desarrollar una app de videojuegos que

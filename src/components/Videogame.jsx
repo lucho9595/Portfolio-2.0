@@ -72,11 +72,11 @@ export default function Videogame() {
 
     return (
         <Container>
-            <div class="contenedor">
+            <div className="contenedor">
                 <a href="https://proyect-videogame-lucho9595.vercel.app/" target="_blank">
                     <figure>
                         <img src={Video} />
-                        <div class="capa">
+                        <div className="capa">
                             <h3>VIDEOGAME</h3>
                             <p>
                                 Diseñar y desarrollar una app de videojuegos que incluía:

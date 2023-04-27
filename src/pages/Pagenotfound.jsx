@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Biography() {
+export default function PageNotFound() {
     return (
         <div>
-            biography
+            PageNotFound
         </div>
     )
 }

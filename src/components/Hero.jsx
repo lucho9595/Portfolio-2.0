@@ -13,12 +13,25 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
+
+@media only screen and (max-width: 768px){
+    height: 200vh;
+}
+
 .container{
     height: 100vh;
     scroll-snap-align: center;
     width: 1400px;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px){
+        width: 100%;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
     .left{
         flex: 2;
         display: flex;
@@ -26,8 +39,18 @@ justify-content: space-between;
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
+
+        @media only screen and (max-width: 768px){
+            flex: 1;
+        }
+
         .leyend h1{
             font-size:74px;
+
+            @media only screen and (max-width: 768px){
+                text-align: center;
+            }
+
         }
         .wwd{
             display: flex;
@@ -40,6 +63,10 @@ justify-content: space-between;
             .letter{
                 color: #fd15c3;
             }
+
+            @media only screen and (max-width: 768px){
+                justify-content: center;
+            }
         }
         .sobremí{
             font-size: 24px;
@@ -47,12 +74,17 @@ justify-content: space-between;
             .name{
                 color: #fd15c3;
             }
+
+            @media only screen and (max-width: 768px){
+                padding: 20px;
+                text-align: center;
+            }
         }
         .button{
             background-color: #da4ea2;
             color: white;
             font-weight: 500;
-            width: 100px;
+            width: 150px;
             border-radius: 10px;
             border: none;
             padding: 10px;
@@ -62,6 +94,12 @@ justify-content: space-between;
     .right{
         flex: 3;
         position: relative;
+
+        @media only screen and (max-width: 768px){
+            flex: 1;
+            align-content: center;
+        }
+
         .img{
             width: 800px;
             height: 600px;
@@ -101,8 +139,8 @@ const Hero = () => {
                     </div>
                     <div className="sobremí">
                         <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
+                        <button className="button">Learn More</button>
                     </div>
-                    <button className="button">Learn More</button>
                 </div>
                 <div className="right">
                     <Canvas>

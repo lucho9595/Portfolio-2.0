@@ -6,16 +6,28 @@ import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
 const Section2 = styled.div`
 display: flex;
 justify-content: center;
+
+    @media only screen and (max-width: 768px){
+        width: 100%;
+        padding: 10px;
+    }
+
 .navbar{
     width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0px;
+
+    @media only screen and (max-width: 768px){
+        width: 100%;
+    }
+
     .links{
         display: flex;
         align-items: center;
         gap: 40px;
+
         .logo{
             .logo{
                 height: 50px;
@@ -26,6 +38,10 @@ justify-content: center;
             gap: 20px;
             list-style: none;
             cursor: pointer;
+
+            @media only screen and (max-width: 768px){
+                display: none;
+            }
         }
         }
     .icons{
@@ -39,8 +55,8 @@ justify-content: center;
             border: none;
             color: #FFFFFF;
             text-align: center;
-            padding: 10px;
-            width: 100px;
+            padding: 12px;
+            width: 136px;
             transition: all 0.5s;
             margin: 5px;
             text-decoration: none;
