@@ -223,18 +223,23 @@ justify-content: center;
         margin-bottom: 250px;
     }
 .img{
-   height: 500px; 
-   width: 1200px;
-   .img2{
-    width: 15px;
+    height: 500px;
+    display: flex;
+    width: 1200px;
+    flex-direction: column;
+    align-items: center;  
+     .img2{
+    display:flex;
+    justify-content: center;
+    width: 450px;
+    height: 350px;
    }
-}
-   
-   @media only screen and (max-width: 768px) {
+
+      @media only screen and (max-width: 768px) {
         height: 350px;
         width: 100%;
     }
-
+}
 `
 
 const Title = styled.h1`
