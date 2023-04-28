@@ -136,7 +136,7 @@ export default function Hero() {
             <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
           </Desc>
           <Link to="/biography">
-            <Button>Learn More</Button>
+            <Button>Read More</Button>
           </Link>
         </Left>
         <Right>

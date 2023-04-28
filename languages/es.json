@@ -1,0 +1,27 @@
+{   
+    "Navbar":{
+        "title": "Biografía",
+        "title2": "Redes sociales:"
+    },
+    "Hero":{
+        "title":"Pensar. Hacer. Resolver.",
+        "subtitle": "Hola",
+        "description": "Soy Luciano Coronel, Desarrollador Web Full Stack",
+        "button": "Leer Más"
+    },
+    "Who":{
+        "title": "Quién soy?",
+        "description": "Hola, bienvenidos a mi sitio web, mi nombre es Luciano Coronel y soy un Desarrollador Web Full Stack. Trabajo con lenguajes de programación ampliamente utilizados en la Industria Tecnológica. Me gusta crear sitios web y aplicaciones escalables. Me encanta aprender y poner en práctica los nuevos conocimientos que voy aprendiendo con el tiempo.",
+        "button": "Descargar Currículum"
+    },
+    "Works":{
+        "title": "Mis Trabajos"
+    },
+    "Skills":{
+        "title": "Mis Habilidades"
+    },
+    "Contact":{
+        "title": "Contacta Conmigo",
+        "button": "Enviar"
+    }
+}

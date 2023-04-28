@@ -76,44 +76,44 @@ const Right = styled.div`
 `;
 
 export default function Contact() {
-    const ref = useRef()
+  const ref = useRef()
 
-    const [success, setSuccess] = useState(null)
+  const [success, setSuccess] = useState(null)
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        emailjs.sendForm('service_wk7208k', 'template_ztlccjk', ref.current, 'Cv-Y0aYLM2UTkCfZz')
-            .then((result) => {
-                console.log(result.text);
-                setSuccess(true)
-            }, (error) => {
-                console.log(error.text);
-                setSuccess(false)
-            });
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
+    emailjs.sendForm('service_wk7208k', 'template_ztlccjk', ref.current, 'Cv-Y0aYLM2UTkCfZz')
+      .then((result) => {
+        console.log(result.text);
+        setSuccess(true)
+      }, (error) => {
+        console.log(error.text);
+        setSuccess(false)
+      });
+  }
 
-    return (
-        <Section4>
-            <Container>
-                <Left>
-                    <Form ref={ref} onSubmit={(e) => handleSubmit(e)}>
-                        <Title>
-                            Contact Us
-                        </Title>
-                        <Input placeholder="Name" name='name' type="text"></Input>
-                        <Input placeholder="Email" name='email' type="email"></Input>
-                        <Input placeholder="Phone Number" name='phone_number' type="email"></Input>
-                        <TextArea placeholder="Write your message" rows={10} name='message'></TextArea>
-                        <Button type="submit">Send</Button>
-                        {success &&
-                            "Your message has been sent. We'll get back to you soon :)"
-                        }
-                    </Form>
-                </Left>
-                <Right>
-                    <Maps />
-                </Right>
-            </Container>
-        </Section4>
-    )
+  return (
+    <Section4>
+      <Container>
+        <Left>
+          <Form ref={ref} onSubmit={(e) => handleSubmit(e)}>
+            <Title>
+              Contact Me
+            </Title>
+            <Input placeholder="Name" name='name' type="text"></Input>
+            <Input placeholder="Email" name='email' type="email"></Input>
+            <Input placeholder="Phone Number" name='phone_number' type="email"></Input>
+            <TextArea placeholder="Write your message" rows={10} name='message'></TextArea>
+            <Button type="submit">Send</Button>
+            {success &&
+              "Your message has been sent. We'll get back to you soon :)"
+            }
+          </Form>
+        </Left>
+        <Right>
+          <Maps />
+        </Right>
+      </Container>
+    </Section4>
+  )
 };

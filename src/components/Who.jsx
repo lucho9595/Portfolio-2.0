@@ -71,27 +71,25 @@ const WhatWeDo = styled.div`
 
 `;
 
-const Hero = () => {
-    return (
-        <Section>
-            <Container>
-                <Left>
-                    <Cube />
-                </Left>
-                <Right>
-                    <Title>
-                        Who am I?
-                    </Title>
-                    <WhatWeDo>
-                        Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
-                        I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
-                        and applications. I love learning and putting into practice the new knowledge that I am learning over time.
-                        <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
-                    </WhatWeDo>
-                </Right>
-            </Container>
-        </Section>
-    )
+export default function Who() {
+  return (
+    <Section>
+      <Container>
+        <Left>
+          <Cube />
+        </Left>
+        <Right>
+          <Title>
+            Who am I?
+          </Title>
+          <WhatWeDo>
+            Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
+            I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
+            and applications. I love learning and putting into practice the new knowledge that I am learning over time.
+            <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
+          </WhatWeDo>
+        </Right>
+      </Container>
+    </Section>
+  )
 }
-
-export default Hero
