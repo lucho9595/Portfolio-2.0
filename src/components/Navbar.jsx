@@ -117,9 +117,6 @@ export default function Navbar() {
                         <img src={Logo4} className="logo" />
                     </Link>
                     <ul className="link">
-                        <Link to="/biography" className="bio">
-                            <li data-section="Navbar" data-value="title">Biography</li>
-                        </Link>
                         <li data-section="Navbar" data-value="title2">Social networks:</li>
                         <Link to="https://wa.me/1137601819" target="_blank" className="bio">
                             <li><BsWhatsapp /></li>
