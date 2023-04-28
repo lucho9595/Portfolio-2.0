@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Pokedata from "./Pokedata";
 import Videogame from "./Videogame";
 import Ecommerce from "./Ecommerce";
 
 const Data = [
-    "Pokedata",
-    "Videogame",
-    "E-commerce",
+  "Pokedata",
+  "Videogame",
+  "E-commerce",
 ]
 
 const Section3 = styled.div`
@@ -115,27 +115,51 @@ const Right = styled.div`
 `;
 
 export default function Works() {
-    const [work, setWork] = useState("Pokedata")
+  const [work, setWork] = useState("Pokedata")
 
-    return (
-        <Section3>
-            <Container>
-                <Left>
-                    <Title>My works</Title>
-                    <List>
-                        {Data.map((item) => (
-                            <ListItem key={item} className="link" text={item} onClick={() => setWork(item)}>{item}</ListItem>
-                        ))}
-                    </List>
-                </Left>
-                <Right>
-                    {work === "Pokedata" ?
-                        (<Pokedata />)
-                        : work === "Videogame" ?
-                            (<Videogame />)
-                            : (<Ecommerce />)}
-                </Right>
-            </Container>
-        </Section3>
-    )
+  //logica para la traduccion
+  useEffect((e) => {
+    const flagElements = document.getElementById("flags");
+
+    const textsToChange = document.querySelectorAll("[data-section]")
+
+    const changeLanguage = async (language) => {
+      const requestJson = await fetch(`../../languages/${language}.json`)
+
+      const texts = await requestJson.json();
+
+      for (const textToChange of textsToChange) {
+        const section = textToChange.dataset.section;
+        const value = textToChange.dataset.value;
+
+        textToChange.innerHTML = texts[section][value];
+      };
+    };
+
+    flagElements.addEventListener('click', (e) => {
+      changeLanguage(e.target.parentElement.dataset.language)
+    })
+  }, []);
+
+  return (
+    <Section3>
+      <Container>
+        <Left>
+          <Title data-section="Works" data-value="title">My works</Title>
+          <List>
+            {Data.map((item) => (
+              <ListItem key={item} className="link" text={item} onClick={() => setWork(item)}>{item}</ListItem>
+            ))}
+          </List>
+        </Left>
+        <Right>
+          {work === "Pokedata" ?
+            (<Pokedata />)
+            : work === "Videogame" ?
+              (<Videogame />)
+              : (<Ecommerce />)}
+        </Right>
+      </Container>
+    </Section3>
+  )
 }

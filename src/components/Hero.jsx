@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Linea from "../../public/img/line.png";
@@ -120,24 +120,48 @@ const Img = styled.img`
 
 
 export default function Hero() {
+  //logica para la traduccion
+  useEffect((e) => {
+    const flagElements = document.getElementById("flags");
+
+    const textsToChange = document.querySelectorAll("[data-section]")
+
+    const changeLanguage = async (language) => {
+      const requestJson = await fetch(`../../languages/${language}.json`)
+
+      const texts = await requestJson.json();
+
+      for (const textToChange of textsToChange) {
+        const section = textToChange.dataset.section;
+        const value = textToChange.dataset.value;
+
+        textToChange.innerHTML = texts[section][value];
+      };
+    };
+
+    flagElements.addEventListener('click', (e) => {
+      changeLanguage(e.target.parentElement.dataset.language)
+    })
+  }, [])
+
 
   return (
     <Section>
       <Navbar />
       <Container>
         <Left>
-          <Title>
+          <Title data-section="Hero" data-value="title">
             Think. Make. Solve.
           </Title>
           <WhatWeDo>
             <Line src={Linea} />
-            <Subtitle>Hello</Subtitle>
+            <Subtitle data-section="Hero" data-value="subtitle">Hello</Subtitle>
           </WhatWeDo>
           <Desc>
-            <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
+            <p data-section="Hero" data-value="description">I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
           </Desc>
           <Link to="/biography">
-            <Button>Read More</Button>
+            <Button data-section="Hero" data-value="button">Read More</Button>
           </Link>
         </Left>
         <Right>

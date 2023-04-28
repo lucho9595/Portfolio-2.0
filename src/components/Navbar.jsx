@@ -85,6 +85,7 @@ justify-content: center;
 
 export default function Navbar() {
 
+    //logica para la traduccion
     useEffect((e) => {
         const flagElements = document.getElementById("flags");
 
@@ -106,7 +107,7 @@ export default function Navbar() {
         flagElements.addEventListener('click', (e) => {
             changeLanguage(e.target.parentElement.dataset.language)
         })
-    }, [])
+    }, []);
 
     return (
         <Section2>

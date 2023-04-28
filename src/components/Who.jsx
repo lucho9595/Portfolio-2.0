@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Cube from "./Cube";
 import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
@@ -72,6 +72,30 @@ const WhatWeDo = styled.div`
 `;
 
 export default function Who() {
+  //logica para la traduccion
+  useEffect((e) => {
+    const flagElements = document.getElementById("flags");
+
+    const textsToChange = document.querySelectorAll("[data-section]")
+
+    const changeLanguage = async (language) => {
+      const requestJson = await fetch(`../../languages/${language}.json`)
+
+      const texts = await requestJson.json();
+
+      for (const textToChange of textsToChange) {
+        const section = textToChange.dataset.section;
+        const value = textToChange.dataset.value;
+
+        textToChange.innerHTML = texts[section][value];
+      };
+    };
+
+    flagElements.addEventListener('click', (e) => {
+      changeLanguage(e.target.parentElement.dataset.language)
+    })
+  }, []);
+
   return (
     <Section>
       <Container>
@@ -79,14 +103,14 @@ export default function Who() {
           <Cube />
         </Left>
         <Right>
-          <Title>
+          <Title data-section="Who" data-value="title">
             Who am I?
           </Title>
-          <WhatWeDo>
+          <WhatWeDo data-section="Who" data-value="description">
             Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
             I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
             and applications. I love learning and putting into practice the new knowledge that I am learning over time.
-            <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
+            <a href={Cv} target="_blank" className="buttonDownload" data-section="Who" data-value="button">Download CV</a>
           </WhatWeDo>
         </Right>
       </Container>

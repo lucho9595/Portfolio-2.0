@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from "styled-components";
 import Maps from "./Map";
@@ -76,10 +76,9 @@ const Right = styled.div`
 `;
 
 export default function Contact() {
+  //logica para mandar el email
   const ref = useRef()
-
   const [success, setSuccess] = useState(null)
-
   const handleSubmit = e => {
     e.preventDefault();
     emailjs.sendForm('service_wk7208k', 'template_ztlccjk', ref.current, 'Cv-Y0aYLM2UTkCfZz')
@@ -92,19 +91,43 @@ export default function Contact() {
       });
   }
 
+  //logica para la traduccion
+  useEffect((e) => {
+    const flagElements = document.getElementById("flags");
+
+    const textsToChange = document.querySelectorAll("[data-section]")
+
+    const changeLanguage = async (language) => {
+      const requestJson = await fetch(`../../languages/${language}.json`)
+
+      const texts = await requestJson.json();
+
+      for (const textToChange of textsToChange) {
+        const section = textToChange.dataset.section;
+        const value = textToChange.dataset.value;
+
+        textToChange.innerHTML = texts[section][value];
+      };
+    };
+
+    flagElements.addEventListener('click', (e) => {
+      changeLanguage(e.target.parentElement.dataset.language)
+    })
+  }, []);
+
   return (
     <Section4>
       <Container>
         <Left>
           <Form ref={ref} onSubmit={(e) => handleSubmit(e)}>
-            <Title>
+            <Title data-section="Contact" data-value="title">
               Contact Me
             </Title>
             <Input placeholder="Name" name='name' type="text"></Input>
             <Input placeholder="Email" name='email' type="email"></Input>
             <Input placeholder="Phone Number" name='phone_number' type="email"></Input>
             <TextArea placeholder="Write your message" rows={10} name='message'></TextArea>
-            <Button type="submit">Send</Button>
+            <Button type="submit" data-section="Contact" data-value="button">Send</Button>
             {success &&
               "Your message has been sent. We'll get back to you soon :)"
             }
