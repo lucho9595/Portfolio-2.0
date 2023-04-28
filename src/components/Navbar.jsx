@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo4 from "../../public/img/Logo4.png";
-import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
 import Spanish from "../../public/es.svg";
 import English from "../../public/us.svg";
+import { BsGithub, BsWhatsapp } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 
 const Section2 = styled.div`
 display: flex;
@@ -29,8 +30,10 @@ justify-content: center;
         display: flex;
         align-items: center;
         gap: 40px;
+        text-decoration: none;
         .logo{
             .logo{
+                cursor: pointer;
                 height: 50px;
             }
         }
@@ -38,33 +41,21 @@ justify-content: center;
             display: flex;
             gap: 20px;
             list-style: none;
+            text-decoration: none;
             cursor: pointer;
             @media only screen and (max-width: 768px){
                 display: none;
             }
         }
+        .link .bio{ 
+            color: white;
+            text-decoration: none;
+                }
         }
     .icons{
         display: flex;
         align-items: center;
         gap: 20px;
-        .buttonDownload{
-            cursor: pointer;
-            border-radius: 4px;
-            background-color: #df3df5;
-            border: none;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 12px;
-            width: 136px;
-            transition: all 0.5s;
-            margin: 5px;
-            text-decoration: none;
-            }
-        .buttonDownload:hover {
-            background-color: #333;
-            color: white;
-            }
         .flags{
             width: 75px;
             display: flex;
@@ -97,17 +88,23 @@ const Navbar = () => {
         <Section2>
             <div className="navbar">
                 <div className="links">
-                    <div className="logo">
-                        <img src={Logo4} className="logo" />
-                    </div>
+                    <Link href="/" className="logo">
+                        <img src={Logo4} className="logo"/>
+                    </Link>
                     <ul className="link">
-                        <li>Home</li>
-                        <Link to="/biography">
+                        <Link to="/biography" className="bio">
                             <li>Biography</li>
                         </Link>
-                        <li>Work</li>
-                        <li>Skills</li>
-                        <li>Contact</li>
+                        <li>Social networks:</li>
+                        <Link to="https://wa.me/1137601819" target="_blank" className="bio">
+                        <li><BsWhatsapp /></li>
+                        </Link>
+                        <Link to="/biography" target="_blank" className="bio">
+                        <li><BsLinkedin /></li>
+                        </Link>
+                        <Link to="/biography" target="_blank" className="bio">
+                        <li><BsGithub /></li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="icons">
@@ -119,7 +116,6 @@ const Navbar = () => {
                             <img src={English} id="english" />
                         </div>
                     </div>
-                    <a href={Cv} target="_blank" className="buttonDownload">Download CV</a>
                 </div>
             </div>
         </Section2>

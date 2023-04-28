@@ -5,6 +5,7 @@ import Linea from "../../public/img/line.png";
 import Programmer from "../../public/img/Programmer.png";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { Link } from "react-router-dom";
 
 
 const Section = styled.div`
@@ -134,7 +135,9 @@ export default function Hero() {
           <Desc>
             <p>I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
           </Desc>
-          <Button>Learn More</Button>
+          <Link to="/biography">
+            <Button>Learn More</Button>
+          </Link>
         </Left>
         <Right>
           <Canvas>
