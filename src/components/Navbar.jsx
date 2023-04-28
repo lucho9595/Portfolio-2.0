@@ -4,8 +4,8 @@ import styled from "styled-components";
 import Logo4 from "../../public/img/Logo4.png";
 import Spanish from "../../public/es.svg";
 import English from "../../public/us.svg";
-import { BsGithub, BsWhatsapp } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsWhatsapp, BsLinkedin } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
 
 const Section2 = styled.div`
 display: flex;
@@ -89,7 +89,7 @@ const Navbar = () => {
             <div className="navbar">
                 <div className="links">
                     <Link href="/" className="logo">
-                        <img src={Logo4} className="logo"/>
+                        <img src={Logo4} className="logo" />
                     </Link>
                     <ul className="link">
                         <Link to="/biography" className="bio">
@@ -97,13 +97,16 @@ const Navbar = () => {
                         </Link>
                         <li>Social networks:</li>
                         <Link to="https://wa.me/1137601819" target="_blank" className="bio">
-                        <li><BsWhatsapp /></li>
+                            <li><BsWhatsapp /></li>
                         </Link>
-                        <Link to="/biography" target="_blank" className="bio">
-                        <li><BsLinkedin /></li>
+                        <Link to="https://www.linkedin.com/in/luciano-coronel-90503bb8" target="_blank" className="bio">
+                            <li><BsLinkedin /></li>
                         </Link>
-                        <Link to="/biography" target="_blank" className="bio">
-                        <li><BsGithub /></li>
+                        <Link to="https://github.com/lucho9595" target="_blank" className="bio">
+                            <li><BsGithub /></li>
+                        </Link>
+                        <Link to="mailto:lucianocoronel48@gmail.com" target="_blank" className="bio">
+                            <li><SiGmail /></li>
                         </Link>
                     </ul>
                 </div>
