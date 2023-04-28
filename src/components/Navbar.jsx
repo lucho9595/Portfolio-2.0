@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo4 from "../../public/img/Logo4.png";
@@ -83,7 +83,31 @@ justify-content: center;
 }
 `
 
-const Navbar = () => {
+export default function Navbar() {
+
+    useEffect((e) => {
+        const flagElements = document.getElementById("flags");
+
+        const textsToChange = document.querySelectorAll("[data-section]")
+
+        const changeLanguage = async (language) => {
+            const requestJson = await fetch(`../../languages/${language}.json`)
+
+            const texts = await requestJson.json();
+
+            for (const textToChange of textsToChange) {
+                const section = textToChange.dataset.section;
+                const value = textToChange.dataset.value;
+
+                textToChange.innerHTML = texts[section][value];
+            };
+        };
+
+        flagElements.addEventListener('click', (e) => {
+            changeLanguage(e.target.parentElement.dataset.language)
+        })
+    }, [])
+
     return (
         <Section2>
             <div className="navbar">
@@ -93,9 +117,9 @@ const Navbar = () => {
                     </Link>
                     <ul className="link">
                         <Link to="/biography" className="bio">
-                            <li>Biography</li>
+                            <li data-section="Navbar" data-value="title">Biography</li>
                         </Link>
-                        <li>Social networks:</li>
+                        <li data-section="Navbar" data-value="title2">Social networks:</li>
                         <Link to="https://wa.me/1137601819" target="_blank" className="bio">
                             <li><BsWhatsapp /></li>
                         </Link>
@@ -123,6 +147,4 @@ const Navbar = () => {
             </div>
         </Section2>
     )
-}
-
-export default Navbar
+};

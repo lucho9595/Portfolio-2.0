@@ -120,6 +120,7 @@ const Img = styled.img`
 
 
 export default function Hero() {
+
   return (
     <Section>
       <Navbar />
