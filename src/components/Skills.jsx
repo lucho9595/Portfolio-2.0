@@ -142,22 +142,6 @@ export default function Skills(args) {
         setActiveIndex(newIndex);
     };
 
-    const slides = items.map((item) => {
-        return (
-            <CarouselItem
-                onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
-                key={item.src}
-            >
-                <Image src={item.src} alt={item.altText} />
-                <CarouselCaption
-                    captionText={item.caption}
-                    captionHeader={item.caption}
-                />
-            </CarouselItem>
-        );
-    });
-
     //logica para la traduccion
     useEffect((e) => {
         const flagElements = document.getElementById("flags");
@@ -196,7 +180,22 @@ export default function Skills(args) {
                     activeIndex={activeIndex}
                     onClickHandler={goToIndex}
                 />
-                {slides}
+                {items.map((item) => {
+                    return (
+                        <CarouselItem
+                            onExiting={() => setAnimating(true)}
+                            onExited={() => setAnimating(false)}
+                            key={item.src}
+                        >
+                            <div className='img'>
+                                <img src={item.src} alt={item.altText} className='img2' />
+                            </div>
+                            <CarouselCaption
+                                captionText={item.caption}
+                                captionHeader={item.caption}
+                            />
+                        </CarouselItem>);
+                })}
                 <CarouselControl
                     direction="prev"
                     directionText="Previous"
@@ -223,18 +222,21 @@ justify-content: center;
    @media only screen and (max-width: 768px) {
         margin-bottom: 250px;
     }
-
-`
-
-const Image = styled.img`
+.img{
    height: 500px; 
    width: 1200px;
+   .img2{
+    width: 15px;
+   }
+}
    
    @media only screen and (max-width: 768px) {
         height: 350px;
         width: 100%;
     }
+
 `
+
 const Title = styled.h1`
 font-size: 50px;
 margin-bottom: 35px;
