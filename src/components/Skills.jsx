@@ -11,23 +11,114 @@ import styled from 'styled-components';
 
 const items = [
     {
-        src: 'https://picsum.photos/id/123/1200/400',
-        altText: 'Slide 1',
-        caption: 'Slide 1',
+        src: '../../public/Skills/A.png',
+        altText: 'Angular',
+        caption: 'Angular',
         key: 1,
     },
     {
-        src: 'https://picsum.photos/id/456/1200/400',
-        altText: 'Slide 2',
-        caption: 'Slide 2',
+        src: '../../public/Skills/PY.png',
+        altText: 'Python',
+        caption: 'Python',
         key: 2,
     },
     {
-        src: 'https://picsum.photos/id/678/1200/400',
-        altText: 'Slide 3',
-        caption: 'Slide 3',
+        src: '../../public/Skills/RT.png',
+        altText: 'React',
+        caption: 'React',
         key: 3,
     },
+    {
+        src: '../../public/Skills/RX.png',
+        altText: 'Redux',
+        caption: 'Redux',
+        key: 4,
+    },
+    {
+        src: '../../public/Skills/B.png',
+        altText: 'Bootstrap',
+        caption: 'Bootstrap',
+        key: 5,
+    },
+    {
+        src: '../../public/Skills/T.png',
+        altText: 'Tailwind',
+        caption: 'Tailwind',
+        key: 6,
+    },
+    {
+        src: './../public/Skills/ST.png',
+        altText: 'Styled-Components',
+        caption: 'Styled-Components',
+        key: 7,
+    },
+    {
+        src: './../public/Skills/H.png',
+        altText: 'HTML',
+        caption: 'HTML',
+        key: 8,
+    },
+    {
+        src: './../public/Skills/C.png',
+        altText: 'CSS',
+        caption: 'CSS',
+        key: 9,
+    },
+    {
+        src: './../public/Skills/JAVASCRIPT.png',
+        altText: 'Javascript',
+        caption: 'Javascript',
+        key: 10,
+    },
+    {
+        src: './../public/Skills/NODEJS.png',
+        altText: 'Node.Js',
+        caption: 'Node.Js',
+        key: 11,
+    },
+    {
+        src: './../public/Skills/g.png',
+        altText: 'Spring-Boot',
+        caption: 'Spring-Boot',
+        key: 12,
+    },
+    {
+        src: './../public/Skills/E.png',
+        altText: 'Express',
+        caption: 'Express',
+        key: 13,
+    },
+    {
+        src: './../public/Skills/S.png',
+        altText: 'Sequelize',
+        caption: 'Sequelize',
+        key: 14,
+    },
+    {
+        src: './../public/Skills/G (2).png',
+        altText: 'Git',
+        caption: 'Git',
+        key: 15,
+    },
+    {
+        src: './../public/Skills/PM.png',
+        altText: 'Postman',
+        caption: 'Postman',
+        key: 16,
+    },
+    {
+        src: './../public/Skills/P.png',
+        altText: 'PostgreSql',
+        caption: 'PostgreSql',
+        key: 17,
+    },
+    {
+        src: './../public/Skills/M.png',
+        altText: 'MySQL',
+        caption: 'MySQL',
+        key: 18,
+    },
+
 ];
 
 export default function Skills(args) {
