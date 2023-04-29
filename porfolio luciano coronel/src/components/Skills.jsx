@@ -8,112 +8,130 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
+import A from "../../public/Skills/A.png";
+import PY from "../../public/Skills/PY.png";
+import RT from '../../public/Skills/RT.png';
+import RX from '../../public/Skills/RX.png';
+import B from '../../public/Skills/B.png';
+import T from '../../public/Skills/T.png';
+import ST from '../../public/Skills/ST.png';
+import H from '../../public/Skills/H.png';
+import C from '../../public/Skills/C.png';
+import JAVASCRIPT from '../../public/Skills/JAVASCRIPT.png';
+import NODEJS from '../../public/Skills/NODEJS.png';
+import g from '../../public/Skills/g.png';
+import E from '../../public/Skills/E.png';
+import S from '../../public/Skills/S.png';
+import GI from '../../public/Skills/GI.png';
+import PM from '../../public/Skills/PM.png';
+import P from '../../public/Skills/P.png';
+import M from '../../public/Skills/M.png';
 
 const items = [
     {
-        src: '../../public/Skills/A.png',
+        src: `${A}`,
         altText: 'Angular',
         caption: 'Angular',
         key: 1,
     },
     {
-        src: '../../public/Skills/PY.png',
+        src: `${PY}`,
         altText: 'Python',
         caption: 'Python',
         key: 2,
     },
     {
-        src: '../../public/Skills/RT.png',
+        src: `${RT}`,
         altText: 'React',
         caption: 'React',
         key: 3,
     },
     {
-        src: '../../public/Skills/RX.png',
+        src: `${RX}`,
         altText: 'Redux',
         caption: 'Redux',
         key: 4,
     },
     {
-        src: '../../public/Skills/B.png',
+        src: `${B}`,
         altText: 'Bootstrap',
         caption: 'Bootstrap',
         key: 5,
     },
     {
-        src: '../../public/Skills/T.png',
+        src: `${T}`,
         altText: 'Tailwind',
         caption: 'Tailwind',
         key: 6,
     },
     {
-        src: './../public/Skills/ST.png',
+        src: `${ST}`,
         altText: 'Styled-Components',
         caption: 'Styled-Components',
         key: 7,
     },
     {
-        src: './../public/Skills/H.png',
+        src: `${H}`,
         altText: 'HTML',
         caption: 'HTML',
         key: 8,
     },
     {
-        src: './../public/Skills/C.png',
+        src: `${C}`,
         altText: 'CSS',
         caption: 'CSS',
         key: 9,
     },
     {
-        src: './../public/Skills/JAVASCRIPT.png',
+        src: `${JAVASCRIPT}`,
         altText: 'Javascript',
         caption: 'Javascript',
         key: 10,
     },
     {
-        src: './../public/Skills/NODEJS.png',
+        src: `${NODEJS}`,
         altText: 'Node.Js',
         caption: 'Node.Js',
         key: 11,
     },
     {
-        src: './../public/Skills/g.png',
+        src: `${g}`,
         altText: 'Spring-Boot',
         caption: 'Spring-Boot',
         key: 12,
     },
     {
-        src: './../public/Skills/E.png',
+        src: `${E}`,
         altText: 'Express',
         caption: 'Express',
         key: 13,
     },
     {
-        src: './../public/Skills/S.png',
+        src: `${S}`,
         altText: 'Sequelize',
         caption: 'Sequelize',
         key: 14,
     },
     {
-        src: './../public/Skills/G (2).png',
+        src: `${GI}`,
         altText: 'Git',
         caption: 'Git',
         key: 15,
     },
     {
-        src: './../public/Skills/PM.png',
+        src: `${PM}`,
         altText: 'Postman',
         caption: 'Postman',
         key: 16,
     },
     {
-        src: './../public/Skills/P.png',
+        src: `${P}`,
         altText: 'PostgreSql',
         caption: 'PostgreSql',
         key: 17,
     },
     {
-        src: './../public/Skills/M.png',
+        src: `${M}`,
         altText: 'MySQL',
         caption: 'MySQL',
         key: 18,
