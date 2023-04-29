@@ -8,24 +8,24 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import A from "../../public/Skills/A.png";
-import PY from "../../public/Skills/PY.png";
-import RT from '../../public/Skills/RT.png';
-import RX from '../../public/Skills/RX.png';
-import B from '../../public/Skills/B.png';
-import T from '../../public/Skills/T.png';
-import ST from '../../public/Skills/ST.png';
-import H from '../../public/Skills/H.png';
-import C from '../../public/Skills/C.png';
-import JAVASCRIPT from '../../public/Skills/JAVASCRIPT.png';
-import NODEJS from '../../public/Skills/NODEJS.png';
-import g from '../../public/Skills/g.png';
-import E from '../../public/Skills/E.png';
-import S from '../../public/Skills/S.png';
-import GI from '../../public/Skills/GI.png';
-import PM from '../../public/Skills/PM.png';
-import P from '../../public/Skills/P.png';
-import M from '../../public/Skills/M.png';
+import A from "../assets/Skills/A.png";
+import PY from "../assets/Skills/PY.png";
+import RT from '../assets/Skills/RT.png';
+import RX from '../assets/Skills/RX.png';
+import B from '../assets/Skills/B.png';
+import T from '../assets/Skills/T.png';
+import ST from '../assets/Skills/ST.png';
+import H from '../assets/Skills/H.png';
+import C from '../assets/Skills/C.png';
+import JAVASCRIPT from '../assets/Skills/JAVASCRIPT.png';
+import NODEJS from '../assets/Skills/NODEJS.png';
+import g from '../assets/Skills/g.png';
+import E from '../assets/Skills/E.png';
+import S from '../assets/Skills/S.png';
+import GI from '../assets/Skills/GI.png';
+import PM from '../assets/Skills/PM.png';
+import P from '../assets/Skills/P.png';
+import M from '../assets/Skills/M.png';
 
 const items = [
     {
