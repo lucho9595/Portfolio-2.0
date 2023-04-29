@@ -98,7 +98,7 @@ export default function Contact() {
     const textsToChange = document.querySelectorAll("[data-section]")
 
     const changeLanguage = async (language) => {
-      const requestJson = await fetch(`../../languages/${language}.json`)
+      const requestJson = await fetch(`../../public/languages/${language}.json`)
 
       const texts = await requestJson.json();
 
