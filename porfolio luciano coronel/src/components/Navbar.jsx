@@ -84,17 +84,23 @@ justify-content: center;
 `
 
 export default function Navbar() {
-
     //logica para la traduccion
     useEffect((e) => {
         const flagElements = document.getElementById("flags");
 
         const textsToChange = document.querySelectorAll("[data-section]")
 
-        const changeLanguage = async (language) => {
-            const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+        const getData = async (language) => {
+            const requestJson = await fetch(`/${language}.json`
+                , {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }
+            )
             const texts = await requestJson.json();
+            console.log(texts)
 
             for (const textToChange of textsToChange) {
                 const section = textToChange.dataset.section;
@@ -102,10 +108,10 @@ export default function Navbar() {
 
                 textToChange.innerHTML = texts[section][value];
             };
-        };
+        }
 
         flagElements.addEventListener('click', (e) => {
-            changeLanguage(e.target.parentElement.dataset.language)
+            getData(e.target.parentElement.dataset.language)
         })
     }, []);
 
@@ -117,7 +123,7 @@ export default function Navbar() {
                         <img src={Logo4} className="logo" />
                     </Link>
                     <ul className="link">
-                        <li data-section="Navbar" data-value="title2">Social networks:</li>
+                        <li data-section="navbar" data-value="title2">Social networks:</li>
                         <Link to="https://wa.me/1137601819" target="_blank" className="bio">
                             <li><BsWhatsapp /></li>
                         </Link>

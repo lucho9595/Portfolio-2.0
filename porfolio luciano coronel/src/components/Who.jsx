@@ -78,10 +78,17 @@ export default function Who() {
 
     const textsToChange = document.querySelectorAll("[data-section]")
 
-    const changeLanguage = async (language) => {
-      const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+    const getData = async (language) => {
+      const requestJson = await fetch(`/${language}.json`
+        , {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+      )
       const texts = await requestJson.json();
+      console.log(texts)
 
       for (const textToChange of textsToChange) {
         const section = textToChange.dataset.section;
@@ -89,10 +96,10 @@ export default function Who() {
 
         textToChange.innerHTML = texts[section][value];
       };
-    };
+    }
 
     flagElements.addEventListener('click', (e) => {
-      changeLanguage(e.target.parentElement.dataset.language)
+      getData(e.target.parentElement.dataset.language)
     })
   }, []);
 
@@ -103,14 +110,14 @@ export default function Who() {
           <Cube />
         </Left>
         <Right>
-          <Title data-section="Who" data-value="title">
+          <Title data-section="who" data-value="title">
             Who am I?
           </Title>
-          <WhatWeDo data-section="Who" data-value="description">
+          <WhatWeDo data-section="who" data-value="description">
             Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer.
             I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites
             and applications. I love learning and putting into practice the new knowledge that I am learning over time.
-            <a href={Cv} target="_blank" className="buttonDownload" data-section="Who" data-value="button">Download CV</a>
+            <a href={Cv} target="_blank" className="buttonDownload" data-section="who" data-value="button">Download CV</a>
           </WhatWeDo>
         </Right>
       </Container>

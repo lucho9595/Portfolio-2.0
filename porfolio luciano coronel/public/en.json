@@ -1,26 +1,26 @@
 {
-    "Navbar":{
+    "navbar":{
         "title": "Biography",
         "title2": "Social networks:"
     },
-    "Hero":{
+    "hero":{
         "title":"Think. Make. Solve.",
         "subtitle": "Hello",
         "description": "I'm Luciano Coronel, Full Stack Web Developer",
         "button": "Read More"
     },
-    "Who":{
+    "who":{
         "title": "Who am I?",
         "description": "Hello, welcome to my website, my name is Luciano Coronel and I am a Full Stack Web Developer. I work with programming languages widely used in the Technology Industry. I enjoy creatins scalable websites and applications. I love learning and putting into practice the new knowledge that I am learning over time.",
         "button": "Download CV"
     },
-    "Works":{
+    "works":{
         "title": "My Works"
     },
-    "Skills":{
+    "skills":{
         "title": "My Skills"
     },
-    "Contact":{
+    "contact":{
         "title": "Contact Me",
         "button": "Send"
     }

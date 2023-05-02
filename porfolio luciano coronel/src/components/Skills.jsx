@@ -8,24 +8,24 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import A from "../assets/Skills/A.png";
-import PY from "../assets/Skills/PY.png";
-import RT from '../assets/Skills/RT.png';
-import RX from '../assets/Skills/RX.png';
-import B from '../assets/Skills/B.png';
-import T from '../assets/Skills/T.png';
-import ST from '../assets/Skills/ST.png';
-import H from '../assets/Skills/H.png';
-import C from '../assets/Skills/C.png';
-import JAVASCRIPT from '../assets/Skills/JAVASCRIPT.png';
-import NODEJS from '../assets/Skills/NODEJS.png';
-import g from '../assets/Skills/g.png';
-import E from '../assets/Skills/E.png';
-import S from '../assets/Skills/S.png';
-import GI from '../assets/Skills/GI.png';
-import PM from '../assets/Skills/PM.png';
-import P from '../assets/Skills/P.png';
-import M from '../assets/Skills/M.png';
+import A from "../../public/img/A.png";
+import PY from "../../public/img/PY.png";
+import RT from '../../public/img/RT.png';
+import RX from '../../public/img/RX.png';
+import B from '../../public/img/B.png';
+import T from '../../public/img/T.png';
+import ST from '../../public/img/ST.png';
+import H from '../../public/img/H.png';
+import C from '../../public/img/C.png';
+import JAVASCRIPT from '../../public/img/JAVASCRIPT.png';
+import NODEJS from '../../public/img/NODEJS.png';
+import g from '../../public/img/g.png';
+import E from '../../public/img/E.png';
+import S from '../../public/img/S.png';
+import GI from '../../public/img/GI.png';
+import PM from '../../public/img/PM.png';
+import P from '../../public/img/P.png';
+import M from '../../public/img/M.png';
 
 const items = [
     {
@@ -166,10 +166,17 @@ export default function Skills(args) {
 
         const textsToChange = document.querySelectorAll("[data-section]")
 
-        const changeLanguage = async (language) => {
-            const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+        const getData = async (language) => {
+            const requestJson = await fetch(`/${language}.json`
+                , {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }
+            )
             const texts = await requestJson.json();
+            console.log(texts)
 
             for (const textToChange of textsToChange) {
                 const section = textToChange.dataset.section;
@@ -177,16 +184,16 @@ export default function Skills(args) {
 
                 textToChange.innerHTML = texts[section][value];
             };
-        };
+        }
 
         flagElements.addEventListener('click', (e) => {
-            changeLanguage(e.target.parentElement.dataset.language)
+            getData(e.target.parentElement.dataset.language)
         })
     }, []);
 
     return (
         <Container>
-            <Title data-section="Skills" data-value="title">My Skills</Title>
+            <Title data-section="skills" data-value="title">My Skills</Title>
             <Carousel
                 activeIndex={activeIndex}
                 next={next}

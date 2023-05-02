@@ -123,10 +123,17 @@ export default function Works() {
 
     const textsToChange = document.querySelectorAll("[data-section]")
 
-    const changeLanguage = async (language) => {
-      const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+    const getData = async (language) => {
+      const requestJson = await fetch(`/${language}.json`
+        , {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+      )
       const texts = await requestJson.json();
+      console.log(texts)
 
       for (const textToChange of textsToChange) {
         const section = textToChange.dataset.section;
@@ -134,10 +141,10 @@ export default function Works() {
 
         textToChange.innerHTML = texts[section][value];
       };
-    };
+    }
 
     flagElements.addEventListener('click', (e) => {
-      changeLanguage(e.target.parentElement.dataset.language)
+      getData(e.target.parentElement.dataset.language)
     })
   }, []);
 
@@ -145,7 +152,7 @@ export default function Works() {
     <Section3>
       <Container>
         <Left>
-          <Title data-section="Works" data-value="title">My works</Title>
+          <Title data-section="works" data-value="title">My works</Title>
           <List>
             {Data.map((item) => (
               <ListItem key={item} className="link" text={item} onClick={() => setWork(item)}>{item}</ListItem>

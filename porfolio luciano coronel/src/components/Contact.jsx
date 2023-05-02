@@ -97,10 +97,17 @@ export default function Contact() {
 
     const textsToChange = document.querySelectorAll("[data-section]")
 
-    const changeLanguage = async (language) => {
-      const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+    const getData = async (language) => {
+      const requestJson = await fetch(`/${language}.json`
+        , {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+      )
       const texts = await requestJson.json();
+      console.log(texts)
 
       for (const textToChange of textsToChange) {
         const section = textToChange.dataset.section;
@@ -108,10 +115,10 @@ export default function Contact() {
 
         textToChange.innerHTML = texts[section][value];
       };
-    };
+    }
 
     flagElements.addEventListener('click', (e) => {
-      changeLanguage(e.target.parentElement.dataset.language)
+      getData(e.target.parentElement.dataset.language)
     })
   }, []);
 
@@ -120,14 +127,14 @@ export default function Contact() {
       <Container>
         <Left>
           <Form ref={ref} onSubmit={(e) => handleSubmit(e)}>
-            <Title data-section="Contact" data-value="title">
+            <Title data-section="contact" data-value="title">
               Contact Me
             </Title>
             <Input placeholder="Name" name='name' type="text"></Input>
             <Input placeholder="Email" name='email' type="email"></Input>
             <Input placeholder="Phone Number" name='phone_number' type="email"></Input>
             <TextArea placeholder="Write your message" rows={10} name='message'></TextArea>
-            <Button type="submit" data-section="Contact" data-value="button">Send</Button>
+            <Button type="submit" data-section="contact" data-value="button">Send</Button>
             {success &&
               "Your message has been sent. We'll get back to you soon :)"
             }

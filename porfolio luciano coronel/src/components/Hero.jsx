@@ -76,16 +76,6 @@ const Desc = styled.p`
     text-align: center;
   }
 `;
-const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
-  font-weight: 500;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
 
 const Right = styled.div`
   flex: 3;
@@ -126,10 +116,17 @@ export default function Hero() {
 
     const textsToChange = document.querySelectorAll("[data-section]")
 
-    const changeLanguage = async (language) => {
-      const requestJson = await fetch(`../../public/languages/${language}.json`)
-
+    const getData = async (language) => {
+      const requestJson = await fetch(`/${language}.json`
+        , {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }
+      )
       const texts = await requestJson.json();
+      console.log(texts)
 
       for (const textToChange of textsToChange) {
         const section = textToChange.dataset.section;
@@ -137,12 +134,12 @@ export default function Hero() {
 
         textToChange.innerHTML = texts[section][value];
       };
-    };
+    }
 
     flagElements.addEventListener('click', (e) => {
-      changeLanguage(e.target.parentElement.dataset.language)
+      getData(e.target.parentElement.dataset.language)
     })
-  }, [])
+  }, []);
 
 
   return (
@@ -150,19 +147,16 @@ export default function Hero() {
       <Navbar />
       <Container>
         <Left>
-          <Title data-section="Hero" data-value="title">
+          <Title data-section="hero" data-value="title">
             Think. Make. Solve.
           </Title>
           <WhatWeDo>
             <Line src={Linea} />
-            <Subtitle data-section="Hero" data-value="subtitle">Hello</Subtitle>
+            <Subtitle data-section="hero" data-value="subtitle">Hello</Subtitle>
           </WhatWeDo>
           <Desc>
-            <p data-section="Hero" data-value="description">I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
+            <p data-section="hero" data-value="description">I'm <span className="name">Luciano Coronel</span>, Full Stack Web Developer</p>
           </Desc>
-          <Link to="/biography">
-            <Button data-section="Hero" data-value="button">Read More</Button>
-          </Link>
         </Left>
         <Right>
           <Canvas>
