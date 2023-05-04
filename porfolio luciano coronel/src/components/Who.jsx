@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Cube from "./Cube";
-import Cv from "../assets/CV- CORONEL LUCIANO - 23-04-2023.pdf";
+import Cv from "../assets/Luciano Coronel - CV.pdf";
 
 const Section = styled.div`
   height: 100vh;
