@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Cube from "./Cube";
-import Cv from "../assets/Luciano Coronel - CV.pdf";
+import Cv from "../assets/Luciano Coronel - CV (1).pdf";
 
 const Section = styled.div`
   height: 100vh;
@@ -9,7 +9,6 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
 `;
-
 
 const Container = styled.div`
   height: 100vh;
@@ -21,7 +20,6 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
-  
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -68,7 +66,6 @@ const WhatWeDo = styled.div`
             background-color: #333;
             color: white;
             }
-
 `;
 
 export default function Who() {
